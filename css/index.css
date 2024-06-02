@@ -1,0 +1,450 @@
+body,
+html {
+    height: 100%;
+    width: 1920px;
+    min-width: 1184px;
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 14px;
+    margin: 0 auto;
+}
+
+/* ::-webkit-scrollbar {
+    display: none;
+} */
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* header部分 */
+.header-wrapper {
+    width: 100%;
+    height: 668px;
+    background-image: url(../img/banner-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.header-container {
+    height: 668px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 460px;
+}
+
+.header-logo {
+    width: 100%;
+    text-align: start;
+}
+
+.logo-img {
+    width: 112px;
+    height: 41px;
+    margin-top: 20px;
+}
+
+.banner-img {
+    width: 729px;
+    height: 329px;
+    margin-top: 140px;
+}
+
+/* page-mainer部分 */
+.page-mainer {
+    position: relative;
+    margin: 0 460px;
+    display: flex;
+    flex-direction: column;
+    border: 6px solid #E2E2E2;
+}
+
+.page-border-top {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-536px);
+}
+
+.page-border-bottom {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-536px);
+}
+
+/* activity部分 */
+.activity-container {
+    position: relative;
+    height: 285px;
+    text-align: center;
+    background-color: #fff;
+    font-family: FZLTHJW;
+    font-weight: normal;
+}
+
+.activity-title-img {
+    position: absolute;
+    left: 26px;
+    top: 36px;
+
+}
+
+.activity-title {
+    font-size: 30px;
+    color: #000000;
+    line-height: 35px;
+    padding-top: 98px;
+}
+
+.activity-subtitle {
+    font-size: 16px;
+    color: #000000;
+    line-height: 26px;
+    margin-top: 31px;
+}
+
+/* nav-section部分 */
+.nav-section {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(112px, 250px);
+}
+
+.nav-list-container {
+    margin-left: 30px;
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    width: 80px;
+    height: 317px;
+    background: #FFFFFF;
+    border: 1px solid #E2E2E2;
+    border-bottom: none;
+}
+
+.nav-item {
+    flex: 1;
+    text-align: center;
+    padding-top: 28px;
+    font-family: FZLTHJW;
+    font-weight: normal;
+    font-size: 14px;
+    color: #000000;
+    border-bottom: 1px solid #E2E2E2;
+    cursor: pointer;
+}
+
+.course-wrapper {
+    padding: 24px 30px 0 20px;
+    background-color: #f7f7f7;
+}
+
+.course-header {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.course-header-logo {
+    width: 60px;
+    height: 174px;
+}
+
+.course-header-title {
+    font-family: FZLTHJW;
+    font-weight: normal;
+    font-size: 16px;
+    color: #000000;
+    line-height: 26px;
+    margin: 72px 65px 0 16px;
+}
+
+/* course-teachers部分 */
+.course-teachers {
+    margin-left: 7px;
+    margin-bottom: 39px;
+}
+
+.course-teachers-header {
+    display: flex;
+}
+
+.course-teachers-title {
+    margin-left: 27px;
+}
+
+.teachers-title-name {
+    font-family: FZLTHJW;
+    font-weight: normal;
+    font-size: 22px;
+    color: #000000;
+    line-height: 26px;
+}
+
+.teachers-title-info {
+    font-family: FZLTHJW;
+    font-weight: normal;
+    font-size: 16px;
+    color: #333333;
+    line-height: 26px;
+    padding-top: 10px;
+}
+
+.course-teachers-list {
+    display: flex;
+    margin-top: 20px;
+}
+
+.course-teachers-item {
+    width: 290px;
+    height: 212px;
+    text-align: center;
+    padding: 13px 11px 0 16px;
+    background-image: url(../img/card-bg.png);
+}
+
+.teachers-item-name {
+    font-family: FZLTHJW;
+    font-weight: normal;
+    font-size: 18px;
+    color: #000000;
+    line-height: 26px;
+    margin: 12px 0 10px;
+}
+
+.teachers-item-description {
+    font-family: FZLTHJW;
+    font-weight: normal;
+    font-size: 14px;
+    color: #000000;
+    line-height: 20px;
+    text-align: left;
+}
+
+.course-java-item {
+    margin: 0 31px;
+}
+
+/* course-footer部分 */
+.course-footer-info {
+    text-align: right;
+    font-family: FZLTHJW;
+    font-weight: normal;
+    font-size: 14px;
+    color: #666666;
+    padding: 21px 0 22px;
+}
+
+/* message-section部分 */
+.message-container {
+    position: relative;
+    text-align: center;
+    background-color: #fff;
+}
+
+.message-title-img {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.message-title {
+    font-family: FZLTHJW;
+    font-weight: normal;
+    font-size: 30px;
+    color: #000000;
+    line-height: 35px;
+    padding-top: 41px;
+}
+
+.message-activity {
+    display: flex;
+}
+
+.message-activity-info {
+    width: 351px;
+    margin-left: 102px;
+}
+
+.message-activity-txt {
+    font-family: FZLTHJW;
+    font-weight: normal;
+    font-size: 14px;
+    color: #000000;
+    line-height: 26px;
+    text-decoration-line: underline;
+    text-align: left;
+    margin: 27px 0 22px;
+}
+
+.activity-rule-title {
+    flex: 1;
+    white-space: nowrap;
+}
+
+.message-activity-time,
+.message-activity-rule {
+    display: flex;
+    font-family: FZLTHJW;
+    font-weight: normal;
+    font-size: 12px;
+    color: #000000;
+    line-height: 26px;
+    text-align: left;
+}
+
+
+.message-activity-img {
+    margin-top: 15px;
+    text-align: left;
+    margin-left: 37px;
+}
+
+.message-activity-prize {
+    font-family: FZLTHJW;
+    font-weight: normal;
+    font-size: 16px;
+    color: #000000;
+    line-height: 26px;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+
+
+
+
+
+/* massage发送部分 */
+.massage-send {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 26px;
+}
+
+.massage-send-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 650px;
+    height: 86px;
+    border: 1px solid #DBDBDB;
+}
+
+.textarea-bg1 {
+    position: absolute;
+    top: 0;
+}
+
+.textarea-bg2 {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.massage-textarea {
+    width: 650px;
+    height: 68px;
+    border: none;
+    outline: none;
+    resize: none;
+    padding: 0;
+    padding-left: 5px;
+    background-color: #fff;
+}
+
+.massage-btn {
+    width: 150px;
+    height: 86px;
+    outline: none;
+    font-family: FZLTHJW;
+    font-weight: normal;
+    font-size: 16px;
+    color: #666666;
+    line-height: 22px;
+    border: 1px solid #DBDBDB;
+    border-left: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.massage-box {
+    position: relative;
+    margin-top: 60px;
+    margin-bottom: 10px;
+    height: 500px;
+    width: 988px;
+    overflow: hidden;
+}
+
+.massage-item {
+    position: absolute;
+    width: 320px;
+    height: 158px;
+    padding: 20px;
+    background: #F0F5FF;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.05);
+}
+
+.massage-item-title {
+    font-family: FZLTHJW;
+    font-weight: normal;
+    font-size: 16px;
+    color: #000000;
+    line-height: 26px;
+}
+
+.massage-item-content {
+    font-family: FZLTHJW;
+    font-weight: normal;
+    font-size: 14px;
+    color: #000000;
+    line-height: 26px;
+}
+
+.message-bg-left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-10px, -15px);
+}
+
+.message-bg-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(15px, -15px);
+}
+
+
+
+
+
+/* footer部分 */
+.footer-container {
+    width: 100%;
+    margin-top: 50px;
+    text-align: center;
+    font-family: FZLTHJW;
+    font-weight: normal;
+    color: #000000;
+}
+
+.footer-title {
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.footer-subtitle {
+    font-size: 12px;
+    line-height: 26px;
+    padding-bottom: 50px;
+}
