@@ -337,11 +337,15 @@
                 </button>
             </div>
             <div class="massage-box" id="card-list">
-                <div class="massage-item" style="z-index: 0;">
+                <div class="massage-item" id="massage-item" style="z-index: 0;">
+                    小兔兔说：
+                    <br>
+                    耿昌宇老师，我是7月5日购买课程的学员，还有一个视频就全部学完了。你的课程简单易学非常感谢，恰逢新年来临送上我的祝福！
                     <img class="message-bg-left" src="./img/message_bg_left.png" alt="">
                     <img class="message-bg-right" src="./img/message_bg_right.png" alt="">
-                    <div class="massage-item-title">小兔兔说：</div>
-                    <div class="massage-item-content">耿昌宇老师，我是7月5日购买课程的学员，还有一个视频就全部学完了。你的课程简单易学非常感谢，恰逢新年来临送上我的祝福！</div>
+                    <div class="massage-item-remove">X</div>
+                    <!-- <div class="massage-item-title"></div>
+                    <div class="massage-item-content"></div> -->
                 </div>
             </div>
         </section>
@@ -402,6 +406,8 @@
                 // 1. 在 PAGE.bind 中委托 card-list 绑定点击 card-item 触发 PAGE.handleMouseDown
                 let cartList = document.getElementById('card-list');
                 this.onEventLister(cartList, 'mousedown', 'massage-item', this.handleMouseDown);
+                // 添加删除事件
+                this.onEventLister(cartList, 'click', 'massage-item-remove', this.removeItem);
                 // 2. 为 window 绑定鼠标移动事件触发 PAGE.handleMouseMove
                 window.addEventListener('mousemove', this.handleMouseMove);
                 // 3. 为 window 绑定鼠标回弹触发 PAGE.handleMouseMove
@@ -413,6 +419,10 @@
                 parentNode.addEventListener(action, function (e) {
                     e.target.className.indexOf(childClassName) >= 0 && callback(e);
                 })
+            },
+            removeItem: function (e) {
+                let massageItem = e.target.parentNode
+                massageItem.remove()
             },
             // 1. 添加 PAGE.handleMouseDown 方法
             handleMouseDown: function (e) {
@@ -426,7 +436,10 @@
                 PAGE.data.pageX = e.pageX;
                 PAGE.data.pageY = e.pageY;
                 // 4. 存储当前点击元素
-                PAGE.data.item = item;
+                let className = e.target.className;
+                if (className !== 'massage-item-remove') {
+                    PAGE.data.item = item;
+                }
                 // 5. 开锁
                 PAGE.data.isLock = false;
             },
@@ -495,30 +508,37 @@
                 let backgroundColor = backgroundColors[zIndex % backgroundColors.length];
                 // 创建卡片元素 massage-item ,设置calssName及样式属性
                 let massageItem = document.createElement('div');
-                let massageItemTitle = document.createElement('div');
-                let massageItemContent = document.createElement('div');
+                let massageItemRemove = document.createElement('div');
+                // let massageItemTitle = document.createElement('div');
+                // let massageItemContent = document.createElement('div');
                 let messageBgLeft = document.createElement('img')
                 let messageBgRight = document.createElement('img')
                 messageBgLeft.setAttribute('class', 'message-bg-left');
                 messageBgRight.setAttribute('class', 'message-bg-right');
                 massageItem.setAttribute('class', 'massage-item');
-                massageItemTitle.setAttribute('class', 'massage-item-title');
-                massageItemContent.setAttribute('class', 'massage-item-content');
+                massageItemRemove.setAttribute('class', 'massage-item-remove')
+                // massageItemTitle.setAttribute('class', 'massage-item-title');
+                // massageItemContent.setAttribute('class', 'massage-item-content');
                 messageBgLeft.setAttribute('src', './img/message_bg_left.png')
                 messageBgRight.setAttribute('src', './img/message_bg_right.png')
-                massageItemTitle.innerText = '小兔兔说：';
-                massageItemContent.innerText = value;
+                // massageItemTitle.innerText = '小兔兔说：';
+                // massageItemContent.innerText = value;
+                massageItem.innerHTML = `小兔兔说:<br>${value}`
+                massageItemRemove.innerText = 'X';
                 let styleStr = `
                 z-index:${zIndex};
                 background:${backgroundColor};
+                border:2px solid ${backgroundColor};
+                background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 20px, rgba(240, 240, 240, 0.6) 20px, rgba(240, 240, 240, 0.6) 21px);
                 top:${randomTop}px;
                 left:${randomLeft}px;`
                 massageItem.setAttribute('style', styleStr)
                 // 把新建的元素依次推入容器cardList
                 massageItem.appendChild(messageBgLeft)
                 massageItem.appendChild(messageBgRight)
-                massageItem.appendChild(massageItemTitle)
-                massageItem.appendChild(massageItemContent)
+                massageItem.appendChild(massageItemRemove)
+                // massageItem.appendChild(massageItemTitle)
+                // massageItem.appendChild(massageItemContent)
                 cardList.appendChild(massageItem)
             },
             // 创建PAGE.randomBetween方法  公式Math.random() * (max - min) + min

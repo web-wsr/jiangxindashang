@@ -1,12 +1,13 @@
-body,
-html {
+body {
     height: 100%;
-    width: 1920px;
-    min-width: 1184px;
+    width: 100%;
+    min-width: 1000px;
     color: rgba(0, 0, 0, 0.65);
     font-size: 14px;
     margin: 0 auto;
+
 }
+
 
 /* ::-webkit-scrollbar {
     display: none;
@@ -25,7 +26,7 @@ a {
     width: 100%;
     height: 668px;
     background-image: url(../img/banner-bg.jpg);
-    background-size: cover;
+    background-size: 100% 668px;
     background-repeat: no-repeat;
 }
 
@@ -56,8 +57,9 @@ a {
 
 /* page-mainer部分 */
 .page-mainer {
+    width: 1000px;
     position: relative;
-    margin: 0 460px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     border: 6px solid #E2E2E2;
@@ -150,6 +152,7 @@ a {
 .course-header {
     display: flex;
     justify-content: flex-start;
+
 }
 
 .course-header-logo {
@@ -389,12 +392,35 @@ a {
     position: absolute;
     width: 320px;
     height: 158px;
-    padding: 20px;
+    padding: 19px;
+    white-space: wrap;
     background: #F0F5FF;
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.05);
+    border: 2px solid #F0F5FF;
+    font-family: FZLTHJW;
+    font-weight: normal;
+    font-size: 14px;
+    color: #000000;
+    line-height: 26px;
+    text-align: justify;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 20px, rgba(240, 240, 240, 0.6) 20px, rgba(240, 240, 240, 0.6) 21px);
 }
 
-.massage-item-title {
+.massage-item img {
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+
+.massage-item p {
+    font-size: 16px;
+}
+
+/* .massage-item-title {
     font-family: FZLTHJW;
     font-weight: normal;
     font-size: 16px;
@@ -408,13 +434,16 @@ a {
     font-size: 14px;
     color: #000000;
     line-height: 26px;
-}
+    cursor: pointer;
+} */
+
 
 .message-bg-left {
     position: absolute;
     left: 0;
     top: 0;
     transform: translate(-10px, -15px);
+
 }
 
 .message-bg-right {
@@ -422,6 +451,28 @@ a {
     right: 0;
     top: 0;
     transform: translate(15px, -15px);
+}
+
+.massage-item-remove {
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    line-height: 15px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    cursor: pointer;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.massage-item:hover .massage-item-remove {
+    display: inline-block;
+    color: #999;
 }
 
 
